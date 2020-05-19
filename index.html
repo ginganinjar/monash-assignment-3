@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+  
+ 
+    <!-- Boostrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+<!--   
+  lets make this responsive -->
+  
+  <div class="container fluid">
+  
+  <div class="row">
+      <div class="col-sm-12">
+        <header>
+       <h1>Password Generator</h1>
+        </header>
+ 
+ 
+
+  </div>
+</div>
+  
+<div class="row">
+    <div class="col-sm-12">
+      <div class="cvlass">
+      <div class="card">
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div>
+        <div class="card-body">
+          <textarea
+          readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+        <div class="card-footer">
+          <button id="generate" class="btn">Generate Password</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+          <div class="card">
+            <h3> Options </h3>
+
+            <div>
+               Password Length :
+              <input type="range" id="passwordlength" name="passwordlength"
+                     min="8" max="128">
+                    <label id="PasswordLengthLabel" >8 Characters</label> 
+
+                    <br>
+                    <b> Password options </b> <br>
+                  
+                <div class="row">
+                    <div class="col-sm-6">
+
+               
+                    <label id="LowercaseOn" class="switch">
+                      <input type="checkbox" id="lowercaseSwitch">
+                      <span class="slider"></span>
+                    </label>
+                    <label id="lowercaseStatus">Lowercase off </label>
+                    <br>
+
+                    <label id="capitalsOn" class="switch">
+                      <input type="checkbox" id="capitals">
+                      <span class="slider"></span>
+                    </label>
+                    <label id="CapitalsStatus">Capital Letters off </label>
+                    <br>
+                    </div>
+                    <div class="col-sm-6">
+
+                      <label id="numericStatusSwitch" class="switch">
+                        <input type="checkbox" id="numericSwitch">
+                        <span class="slider"></span>
+                      </label>
+                      <label id="numericStatusLabel">Numerical off </label>
+                      <br>
+
+                      <label id="SpecialStatusSwitch" class="switch">
+                        <input type="checkbox" id="SpecialSwitch">
+                        <span class="slider"></span>
+                      </label>
+                      <label id="specialcharactersLabel">Special Characters off </label>
+                            <br>    
+
+
+                    </div>
+                  </div>
+                
+
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+  
+ 
+
+  
+ </div>
+
+    
+
+    <script src="script.js"></script>
+        <!-- jQuery & Bootstrap CDN -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <!-- toggle switch -->
+
+      </body>
+
+
+
+</html>
