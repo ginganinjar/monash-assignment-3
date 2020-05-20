@@ -70,7 +70,7 @@ function adjustLength() {
         
                 } while (satisfied === false);      
            return letterType;
-}
+          }
 
 
     function createPassword() {
