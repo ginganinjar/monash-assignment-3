@@ -18,7 +18,7 @@ function adjustLength() {
   }
 
     function returnCharacter() {
-        var specialChar = ['@', '#', '$', '%', '<', '^', '<'];
+        var specialChar = ['@', '#', '$', '%', '<', '^', '<','~','}','|','{','`','_','!','&','”','(',')','*','+',','];
         // Will just use an array and switch between caps and lowercase depending on switch
         var alphabetChar = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
         var numbersChar = ['0','1','2','3','4','5','6','7','8','9'];
