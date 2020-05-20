@@ -23,8 +23,7 @@ function adjustLength() {
         var alphabetChar = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
         var numbersChar = ['0','1','2','3','4','5','6','7','8','9'];
      
-
-          do {
+           do {
        
       // lets set up a random scenario of 1 to 4. based on that let's choose the ideal response. For 0, special, 1 alpha, 2 caps, 3 lowercase
       letterType = getRandomNumber(4);
@@ -68,10 +67,9 @@ function adjustLength() {
                     satisfied = true;
                     }
                   }
-              } while (satisfied === false);
-
-          
-            return letterType;
+        
+                } while (satisfied === false);      
+           return letterType;
 }
 
 
