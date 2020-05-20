@@ -92,8 +92,13 @@ function adjustLength() {
 
           }
              
-              // insert the password
+              // insert the password and copy to ram
                document.getElementById("password").innerHTML = thePassWordFinal;
+              // copy the new password to the clipboard
+               var copyText = document.querySelector("#password");
+               copyText.select();
+               document.execCommand("copy");
+
       }
 
 
