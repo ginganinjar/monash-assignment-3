@@ -24,7 +24,7 @@ function adjustLength() {
         var numbersChar = ['0','1','2','3','4','5','6','7','8','9'];
      
 
-do {
+          do {
        
       // lets set up a random scenario of 1 to 4. based on that let's choose the ideal response. For 0, special, 1 alpha, 2 caps, 3 lowercase
       letterType = getRandomNumber(4);
@@ -32,10 +32,6 @@ do {
       // use this to ensure that only the correct type is returned
       var satisfied = false;
       
- 
-    
-        //alert("im in this loop");
-
       // special characters
       if (letterType === 0) {
         // check if switch is on..
