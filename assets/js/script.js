@@ -20,12 +20,13 @@ function adjustLength() {
 function fixRange() {
 
 
-  if (((document.getElementById("passwordLengthTextBox").value) < 129) && ((document.getElementById("passwordLengthTextBox").value) > 0)) {
+  if (((document.getElementById("passwordLengthTextBox").value) < 129) && ((document.getElementById("passwordLengthTextBox").value) > 7)) {
     document.getElementById("passwordLengthRange").value = document.getElementById("passwordLengthTextBox").value;
   }
   else {
-    alert("Value must be between 1 and 128 characters");
-  }
+    document.getElementById("passwordLengthTextBox").value = 8;
+      fixRange();
+   }
 
 }
 
@@ -87,7 +88,7 @@ function returnCharacter() {
 
 function createPassword() {
   // get the password size preference and loop until it is satisfied  
-  passwordSize = document.getElementById("passwordlength").value;
+  passwordSize = document.getElementById("passwordLengthTextBox").value;
   thePassWordFinal = "";
 
   // check that at least one condition is turned to on
