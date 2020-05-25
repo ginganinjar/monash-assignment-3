@@ -12,10 +12,13 @@ function getRandomNumber(totalNumber) {
 
 // get value of password length
 function adjustLength() {
-  var passwordLengthVar = document.getElementById("passwordlength").value;
-   document.getElementById("PasswordLengthLabel").innerHTML = passwordLengthVar + " characters";
+      document.getElementById("passwordLength").value = document.getElementById("passwordlength").value;
 
   }
+// after manual key input for fields, fix slider range
+  function fixRange() {
+    document.getElementById("passwordlength").value =  document.getElementById("passwordLength").value;
+      }
 
     function returnCharacter() {
         var specialChar = ['@', '#', '$', '%', '<', '^', '<','~','}','|','{','`','_','!','&','”','(',')','*','+',','];
@@ -125,3 +128,6 @@ function adjustLength() {
     capitalsOn.addEventListener("change",function(){toggleStatus("capitals", "CapitalsStatus","Capital Letters  ")}, false);
     lowercaseSwitch.addEventListener("change",function(){toggleStatus("lowercaseSwitch", "lowercaseStatus","Lowercase  ")}, false);
     numericSwitch.addEventListener("change",function(){toggleStatus("numericSwitch", "numericStatusLabel","Numerical ")}, false);
+    passwordLength.addEventListener("change",fixRange);
+
+    
