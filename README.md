@@ -12,7 +12,5 @@ The application will create a password with the range of 8 to 128 chrs. The type
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
-
 ## License
 Shareware. No license or copyright provisions.
