@@ -19,22 +19,24 @@ function adjustLength() {
 // after manual key input for fields, fix slider range
 function fixRange() {
 
-
+// check that values are between 8 and 128.
   if (((document.getElementById("passwordLengthTextBox").value) < 129) && ((document.getElementById("passwordLengthTextBox").value) > 7)) {
     document.getElementById("passwordLengthRange").value = document.getElementById("passwordLengthTextBox").value;
   }
   else {
+    // the user got input value wrong - reset to 8.
     document.getElementById("passwordLengthTextBox").value = 8;
       fixRange();
+      alert( "Password must be between 8 and 128 characters");
    }
 
 }
 
 function returnCharacter() {
-  var specialChar = ['@', '#', '$', '%', '<', '^', '<', '~', '}', '|', '{', '`', '_', '!', '&', '”', '(', ')', '*', '+', ','];
+  let specialChar = ['@', '#', '$', '%', '<', '^', '<', '~', '}', '|', '{', '`', '_', '!', '&', '”', '(', ')', '*', '+', ','];
   // Will just use an array and switch between caps and lowercase depending on switch
-  var alphabetChar = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  var numbersChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  let alphabetChar = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  let numbersChar = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
   do {
 
@@ -85,6 +87,37 @@ function returnCharacter() {
   return letterType;
 }
 
+  // this function will display a message depending on if the password was sucesfull or a failure
+  
+function flashmessage(typeofMessage) {
+
+  // two options success and failed - set up the box accordingly.
+
+  if (typeofMessage === "success") {
+    var classvariable = "alert alert-success";
+    var messagevariable = "  Password copied to memory";
+
+  } else {
+    var classvariable = "alert alert-danger";
+    var messagevariable = "You must include options from from the toggle switches below";
+  }
+  document.getElementById("alertMessage").setAttribute("class", classvariable);
+  document.getElementById("alertMessage").innerHTML = messagevariable;
+
+  document.getElementById("alertMessage").style = "visibility:block;"
+
+  function showagain() {
+    document.getElementById("alertMessage").style = "visibility:hidden;"
+  }
+  // show some fancy stuff to make it look a bit more beautiful.
+  $("#alertMessage").fadeTo("slow", 0.15);
+  $("#alertMessage").fadeTo("slow", 0.4);
+  $("#alertMessage").fadeTo("slow", 0.7);
+  $("#alertMessage").fadeTo("slow", 0, showagain);
+
+}
+
+
 
 function createPassword() {
   // get the password size preference and loop until it is satisfied  
@@ -93,11 +126,13 @@ function createPassword() {
 
   // check that at least one condition is turned to on
   if ((document.getElementById("numericSwitch").checked == false) && (document.getElementById("lowercaseSwitch").checked == false) && (document.getElementById("capitals").checked == false) && (document.getElementById("SpecialSwitch").checked == false)) {
-    alert("You must select the type of characterset you'd like your password to include from the toggle switches below");
+    flashmessage("failed");
+
     return;
 
+  } else {
+    flashmessage("success");
   }
-
 
   for (loopCounter = 0; loopCounter < passwordSize; loopCounter++) {
     //go fetch the desired letter;
