@@ -103,7 +103,6 @@ function flashmessage(typeofMessage) {
   }
   document.getElementById("alertMessage").setAttribute("class", classvariable);
   document.getElementById("alertMessage").innerHTML = messagevariable;
-
   document.getElementById("alertMessage").style = "visibility:block;"
 
   function showagain() {
