@@ -1,9 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
 
-
+// generate number using the pseudo random switch which is not really random at all, but rather a poorly formed immitation of random.
 function getRandomNumber(totalNumber) {
   randomResponse = Math.floor(Math.random() * totalNumber);
   return randomResponse;
@@ -40,7 +39,7 @@ function returnCharacter() {
 
   do {
 
-    // lets set up a random scenario of 1 to 4. based on that let's choose the ideal response. For 0, special, 1 alpha, 2 caps, 3 lowercase
+    // lets set up a random scenario of 0 to 3. based on that let's choose the ideal response. For 0, special, 1 caps, 2 lowercase, 3 numerical
     letterType = getRandomNumber(4);
 
     // use this to ensure that only the correct type is returned
@@ -51,7 +50,7 @@ function returnCharacter() {
       // check if switch is on..
       if (document.getElementById("SpecialSwitch").checked == true) {
         letterType = specialChar[getRandomNumber(specialChar.length)];
-        satisfied = true;
+        var satisfied = true;
       }
     }
 
@@ -60,7 +59,7 @@ function returnCharacter() {
       // check if switch is on..
       if (document.getElementById("capitals").checked == true) {
         letterType = alphabetChar[getRandomNumber(alphabetChar.length)];
-        satisfied = true;
+        var satisfied = true;
       }
     }
 
@@ -70,7 +69,7 @@ function returnCharacter() {
       if (document.getElementById("lowercaseSwitch").checked == true) {
         letterType = alphabetChar[getRandomNumber(alphabetChar.length)];
         letterType = letterType.toLowerCase();
-        satisfied = true;
+        var satisfied = true;
       }
     }
 
@@ -79,7 +78,7 @@ function returnCharacter() {
       // check if switch is on..
       if (document.getElementById("numericSwitch").checked == true) {
         letterType = numbersChar[getRandomNumber(numbersChar.length)];
-        satisfied = true;
+        var satisfied = true;
       }
     }
 
@@ -103,16 +102,16 @@ function flashmessage(typeofMessage) {
   }
   document.getElementById("alertMessage").setAttribute("class", classvariable);
   document.getElementById("alertMessage").innerHTML = messagevariable;
-  document.getElementById("alertMessage").style = "visibility:block;"
+  document.getElementById("alertMessage").style = "visibility:visible;"
 
-  function showagain() {
+  function hideagain() {
     document.getElementById("alertMessage").style = "visibility:hidden;"
   }
   // show some fancy stuff to make it look a bit more beautiful.
   $("#alertMessage").fadeTo("slow", 0.15);
   $("#alertMessage").fadeTo("slow", 0.4);
   $("#alertMessage").fadeTo("slow", 0.7);
-  $("#alertMessage").fadeTo("slow", 0, showagain);
+  $("#alertMessage").fadeTo("slow", 0, hideagain);
 
 }
 
@@ -121,12 +120,13 @@ function flashmessage(typeofMessage) {
 function createPassword() {
   // get the password size preference and loop until it is satisfied  
   passwordSize = document.getElementById("passwordLengthTextBox").value;
-  thePassWordFinal = "";
+  var thePassWordFinal = "";
 
   // check that at least one condition is turned to on
   if ((document.getElementById("numericSwitch").checked == false) && (document.getElementById("lowercaseSwitch").checked == false) && (document.getElementById("capitals").checked == false) && (document.getElementById("SpecialSwitch").checked == false)) {
     flashmessage("failed");
 
+      // drop out - do not update field with database information.
     return;
 
   } else {
@@ -135,7 +135,7 @@ function createPassword() {
 
   for (loopCounter = 0; loopCounter < passwordSize; loopCounter++) {
     //go fetch the desired letter;
-    thePassWordFinal = thePassWordFinal + returnCharacter();
+    var thePassWordFinal = thePassWordFinal + returnCharacter();
 
   }
 
