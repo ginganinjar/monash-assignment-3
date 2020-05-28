@@ -23,7 +23,7 @@ function fixRange() {
     document.getElementById("passwordLengthRange").value = document.getElementById("passwordLengthTextBox").value;
   }
   else {
-    // the user got input value wrong - reset to 8.
+    // the user got input value wrong -everyone is a joker... reset to 8.
     document.getElementById("passwordLengthTextBox").value = 8;
       fixRange();
       alert( "Password must be between 8 and 128 characters");
