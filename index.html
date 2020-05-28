@@ -1,77 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
-  
- 
-    <!-- Boostrap CSS -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Password Generator</title>
+
+
+  <!-- Boostrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-<!--   
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <!--   
   lets make this responsive -->
-  
+
   <div class="container fluid">
-  
-  <div class="row">
+
+    <div class="row">
       <div class="col-sm-12">
         <header>
-       <h1>Password Generator</h1>
+          <h1>Password Generator</h1>
         </header>
- 
- 
-
-  </div>
-</div>
-  
-<div class="row">
-    <div class="col-sm-12">
-      <div class="cvlass">
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
-        </div>
-        <div class="card-body">
-          <textarea
-          readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
-          <div class="alert alert-success" role="alert" id="alertMessage" style="visibility: hidden;text-align:center;">
-            Password copied to memory
-          </div>
-         </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
-        </div>
       </div>
     </div>
+
     <div class="row">
-        <div class="col-sm-12">
+      <div class="col-sm-12">
+        <div class="cvlass">
           <div class="card">
-            <h3> Options </h3>
+            <div class="card-header">
+              <h2>Generate a Password</h2>
+            </div>
+            <div class="card-body">
+              <textarea readonly id="password" placeholder="Your Secure Password"
+                aria-label="Generated Password"></textarea>
+              <div class="alert alert-success" role="alert" id="alertMessage"
+                style="visibility: hidden;text-align:center;">
+                Password copied to memory
+              </div>
+            </div>
+            <div class="card-footer">
+              <button id="generate" class="btn">Generate Password</button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="card">
+              <h3> Options </h3>
 
-            <div>
-               Password Length :
-              <input type="range" id="passwordLengthRange" name="passwordlength"
-                     min="8" max="128" value="8">
-                     <input type="text" id="passwordLengthTextBox" value="8" style="width:40px;">
-                     <label id="PasswordLengthLabel" >Characters</label> 
-                   
-                    <br>
-                    <b> Password options </b> <br>
-                  
+              <div>
+                Password Length :
+                <input type="range" id="passwordLengthRange" name="passwordlength" min="8" max="128" value="8">
+                <input type="text" id="passwordLengthTextBox" value="8" style="width:40px;">
+                <label id="PasswordLengthLabel">Characters</label>
+
+                <br>
+                <b> Password options </b> <br>
+
                 <div class="row">
-                    <div class="col-sm-6">
+                  <div class="col-sm-6">
 
-               
+
                     <label id="LowercaseOn" class="switch">
                       <input type="checkbox" id="lowercaseSwitch">
                       <span class="slider"></span>
@@ -85,49 +80,49 @@
                     </label>
                     <label id="CapitalsStatus">Capital Letters off </label>
                     <br>
-                    </div>
-                    <div class="col-sm-6">
-
-                      <label id="numericStatusSwitch" class="switch">
-                        <input type="checkbox" id="numericSwitch">
-                        <span class="slider"></span>
-                      </label>
-                      <label id="numericStatusLabel">Numerical off </label>
-                      <br>
-
-                      <label id="SpecialStatusSwitch" class="switch">
-                        <input type="checkbox" id="SpecialSwitch">
-                        <span class="slider"></span>
-                      </label>
-                      <label id="specialcharactersLabel">Special Characters off </label>
-                            <br>    
-
-
-                    </div>
                   </div>
-                
+                  <div class="col-sm-6">
+
+                    <label id="numericStatusSwitch" class="switch">
+                      <input type="checkbox" id="numericSwitch">
+                      <span class="slider"></span>
+                    </label>
+                    <label id="numericStatusLabel">Numerical off </label>
+                    <br>
+
+                    <label id="SpecialStatusSwitch" class="switch">
+                      <input type="checkbox" id="SpecialSwitch">
+                      <span class="slider"></span>
+                    </label>
+                    <label id="specialcharactersLabel">Special Characters off </label>
+                    <br>
+
+
+                  </div>
+                </div>
+
 
               </div>
+            </div>
           </div>
         </div>
+      </div>
     </div>
+
+
+
+
   </div>
-</div>
-  
- 
 
-  
- </div>
 
-    
 
-    <script src="assets/js/script.js"></script>
-        <!-- jQuery & Bootstrap CDN -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-      <!-- toggle switch -->
+  <script src="assets/js/script.js"></script>
+  <!-- jQuery & Bootstrap CDN -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- toggle switch -->
 
-      </body>
+</body>
 
 
 
